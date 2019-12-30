@@ -47,7 +47,7 @@ ExtrapolationMethod   : Extrapolation method
 Dst     : Output Image
 ```
 
-## linolar.m
+## linpolar.m
 wrapper function to excute linear polar transformation.  
 Just call warpPolar with `'LinearPolarMapping', true`.
 
@@ -56,7 +56,7 @@ function Dst = linpolar(Src, varargin)
 Dst = warpPolar(Src, varargin{:}, 'LinearPolarMapping', true);
 ```
 
-## logolar.m
+## logpolar.m
 wrapper function to excute semilog polar transformation.  
 Just call warpPolar with `'LinearPolarMapping', false`.
 
