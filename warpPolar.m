@@ -1,4 +1,4 @@
-function Dst = warpPolar(Src, varargin)
+function varargout = warpPolar(Src, varargin)
 %% Dst = warpPolar(Src, Dst, Center, MaxRho)
 % Dst = warpPolar(Src)
 % Dst = warpPolar(Src, Dst)
@@ -37,7 +37,7 @@ function Dst = warpPolar(Src, varargin)
 
 
 % Input parser
-[SizSrc, ImgSrc, SizDst, ImgDst, Center, MaxRho, LinearPolarMapping, ForwardTransformation, InterpolationMethod, ExtrapolationMethod] = parseArgs(Src, varargin{:});
+[SizSrc,ImgSrc,SizDst,ImgDst,Center,MaxRho,LinearPolarMapping,ForwardTransformation,InterpolationMethod,ExtrapolationMethod]=parseArgs(Src,varargin{:});
 
 
 if ForwardTransformation
@@ -128,7 +128,20 @@ else % Inverse Transformation
     end
 end
 
-Dst = ImgDst;
+varargout{1} = ImgDst;
+if 1 < nargout
+  varargout{2} = TheDst;
+end
+if 2 < nargout
+  varargout{3} = RhoDst;
+end
+if 3 < nargout
+  varargout{4} = RowDst;
+end
+if 4 < nargout
+  varargout{5} = ColDst;
+end
+
 end
 
 
