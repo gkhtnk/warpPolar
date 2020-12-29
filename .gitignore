@@ -1,0 +1,11 @@
+# List of untracked files to ignore
+
+*.asv
+*.m~
+*.mex*
+
+
+*.prj
+*.slprj
+*.sccprj
+resources/
